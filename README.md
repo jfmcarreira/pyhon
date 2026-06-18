@@ -1,22 +1,26 @@
 **This python package is unofficial and is not related in any way to Haier. It was developed by reversed engineered requests and can stop working at anytime!**
 
 # pyhon-revived
+
 [![PyPI - Status](https://img.shields.io/pypi/status/pyhon-revived)](https://pypi.org/project/pyhon-revived)
 [![PyPI](https://img.shields.io/pypi/v/pyhon-revived?color=blue)](https://pypi.org/project/pyhon-revived)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pyhon-revived)](https://www.python.org/)
 [![PyPI - License](https://img.shields.io/pypi/l/pyhon-revived)](https://github.com/mmalolepszy/pyhon-revived/blob/main/LICENSE)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/pyhon-revived)](https://pypistats.org/packages/pyhon-revived)  
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/pyhon-revived)](https://pypistats.org/packages/pyhon-revived)
 
 Control your Haier, Candy and Hoover appliances with python!
 The idea behind this library is, to make the use of all available commands as simple as possible.
 
 ## Installation
+
 ```bash
-pip install pyhon-revived
+pip install pyhon
 ```
 
 ### Quick overview
+
 To get an idea of what is possible, use the commandline-tool `pyhon`. This command requests all available options of connected appliances from the hOn api of your Haier Account.
+
 ```commandline
 $ pyhon --user example@mail.com --password pass123
 ========== WM - Waschmaschine ==========
@@ -45,7 +49,9 @@ settings:
 ```
 
 ## Python-API
+
 ### List devices
+
 ```python
 import asyncio
 from pyhon import Hon
@@ -59,6 +65,7 @@ asyncio.run(devices_example())
 ```
 
 ### Execute a command
+
 ```python
 async with Hon(USER, PASSWORD) as hon:
     washing_machine = hon.appliances[0]
@@ -67,6 +74,7 @@ async with Hon(USER, PASSWORD) as hon:
 ```
 
 ### Set command parameter
+
 ```python
 async with Hon(USER, PASSWORD) as hon:
     washing_machine = hon.appliances[0]
@@ -85,7 +93,9 @@ async with Hon(USER, PASSWORD) as hon:
 ```
 
 ## Translation
+
 To get the translation of some keys like programs, you can use the translation command to see all of hOn's available translations
+
 ```commandline
 $ pyhon translate es
 AC:
@@ -96,18 +106,21 @@ AC:
     TITLE_SAVE_NAME: Para cambiar el nombre de tu aparato:
 ...
 ```
+
 This generates a huge output. It is recommended to pipe this into a file
+
 ```commandline
 $ pyhon translate fr > hon_fr.yaml
 $ pyhon translate en --json > hon_en.json
 ```
 
 ## Usage example
+
 This library is used for the custom [HomeAssistant Integration "Haier hOn"](https://github.com/mmalolepszy/hon-revived).
 
 ## Contribution
+
 Any kind of contribution is welcome!
 
 | Please add your appliances data to our [hon-test-data collection](https://github.com/mmalolepszy/hon-test-data). <br/>This helps us to develop new features and not to break compatibility in newer versions. |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

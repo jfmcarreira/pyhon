@@ -6,15 +6,14 @@ with open("README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
-    name="pyhon-revived",
+    name="pyhon",
     version="0.18.3",
     author="Andre Basche, Michał Małolepszy",
     description="Control hOn devices with python",
     long_description=long_description,
     long_description_content_type="text/markdown",
     project_urls={
-        "GitHub": "https://github.com/mmalolepszy/pyhon-revived",
-        "PyPI": "https://pypi.org/project/pyhon-revived",
+        "GitHub": "https://github.com/jfmcarreira/pyhon",
     },
     license="MIT",
     platforms="any",
